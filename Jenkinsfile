@@ -23,9 +23,10 @@ pipeline {
             }
         }
 
-        stage('Load Image into Minikube') {
+        stage('Check Minikube') {
             steps {
-                bat 'minikube image load my-webpage:%BUILD_NUMBER%'
+                bat 'minikube profile list'
+                bat 'minikube status'
             }
         }
 
