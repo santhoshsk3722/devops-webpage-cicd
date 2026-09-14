@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-webpage
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: my-webpage
+    
+  template:
+    metadata:
+      labels:
+        app: my-webpage
+    spec:
+      containers:
+      - name: my-webpage
+        image: my-webpage:1.0
+        ports:
+        - containerPort: 80
