@@ -35,16 +35,13 @@ pipeline {
 
         stage('Deploy') {
             environment {
-                HOME = 'C:/ProgramData/Jenkins'
-                MINIKUBE_HOME = 'C:/ProgramData/Jenkins'
+                KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.kube\\config'
             }
 
             steps {
-                bat 'minikube kubectl -- apply -f k8s/ --validate=false'
-
-                bat 'minikube kubectl -- set image deployment/my-webpage my-webpage=my-webpage:%BUILD_NUMBER%'
-
-                bat 'minikube kubectl -- rollout status deployment/my-webpage'
+                bat 'kubectl apply -f k8s/ --validate=false'
+                bat 'kubectl set image deployment/my-webpage my-webpage=my-webpage:%BUILD_NUMBER%'
+                bat 'kubectl rollout status deployment/my-webpage'
             }
         }
     }
