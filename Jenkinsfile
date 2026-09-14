@@ -23,6 +23,16 @@ pipeline {
             }
         }
 
+        stage('Load Image into Minikube') {
+            environment {
+                MINIKUBE_HOME = 'C:\\Users\\Hp'
+            }
+
+            steps {
+                bat 'minikube image load my-webpage:%BUILD_NUMBER%'
+            }
+        }
+
         stage('Check Kubernetes') {
             environment {
                 KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.kube\\config'
