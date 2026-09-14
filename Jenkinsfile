@@ -21,7 +21,7 @@ pipeline{
         }
         stage('deploy'){
             steps{
-                bat 'minikube kubectl -- apply -f k8s/ --validate=fals'
+                bat 'minikube kubectl -- apply -f k8s/ --validate=false'
             }
         }
     }
