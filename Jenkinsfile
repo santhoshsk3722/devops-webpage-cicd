@@ -28,14 +28,11 @@ pipeline {
                 MINIKUBE_HOME = 'C:\\Users\\Hp'
                 KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.kube\\config'
             }
-
             steps {
-                bat 'echo MINIKUBE_HOME=%MINIKUBE_HOME%'
-                bat 'echo KUBECONFIG=%KUBECONFIG%'
-                bat 'minikube profile list'
                 bat 'minikube image load my-webpage:%BUILD_NUMBER%'
             }
         }
+
         stage('Check Kubernetes') {
             environment {
                 KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.kube\\config'
