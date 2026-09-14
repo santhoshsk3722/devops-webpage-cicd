@@ -21,7 +21,7 @@ pipeline{
         }
         stage('deploy'){
             steps{
-                bat 'kubectl apply -f k8s/ --validate=false'
+                bat 'kubectl --server=https://127.0.0.1:57985 apply -f k8s/ --validate=false'
             }
         }
     }
