@@ -21,7 +21,7 @@ pipeline{
         }
         stage('deploy'){
             steps{
-                bat 'kubectl apply -f k8s/'
+                bat 'kubectl apply -f k8s/ --validate=false'
             }
         }
     }
