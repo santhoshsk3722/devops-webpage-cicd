@@ -23,10 +23,13 @@ pipeline {
             }
         }
 
-        stage('Check Minikube') {
+        stage('Check Kubernetes') {
+            environment {
+                KUBECONFIG = 'C:\\ProgramData\\Jenkins\\.kube\\config'
+            }
+
             steps {
-                bat 'minikube profile list'
-                bat 'minikube status'
+                bat 'kubectl get nodes'
             }
         }
 
