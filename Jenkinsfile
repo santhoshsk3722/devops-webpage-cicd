@@ -20,6 +20,10 @@ pipeline{
             }
         }
         stage('deploy'){
+            environment {
+                HOME = 'C:\ProgramData\Jenkins'
+                MINIKUBE_HOME = 'C:\ProgramData\Jenkins'
+            }
             steps{
                 bat 'minikube kubectl -- apply -f k8s/ --validate=false'
             }
