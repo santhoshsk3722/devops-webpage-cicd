@@ -4,6 +4,12 @@ metadata:
   name: my-webpage
 spec:
   ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - myweb.local
+      secretName: myweb-tls
+
   rules:
     - host: myweb.local
       http:
