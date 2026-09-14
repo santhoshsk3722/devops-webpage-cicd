@@ -839,30 +839,6 @@ docs/
 └── 12-final-application.png
 ```
 
-Then display the most important evidence directly in the README:
-
-### 🔨 Jenkins Pipeline
-
-![Jenkins Pipeline](docs/02-jenkins-success.png)
-
-### ☸️ Kubernetes
-
-![Kubernetes](docs/05-kubernetes-pods.png)
-
-### 📈 HPA
-
-![HPA Scaling](docs/08-hpa-scale-up.png)
-
-### 🔐 HTTPS
-
-![HTTPS](docs/11-https.png)
-
-### 🌐 Application
-
-![Application](docs/12-final-application.png)
-
-> Add these images after taking the screenshots from your actual environment. Don't use placeholder screenshots from other repositories.
-
 ---
 
 # 🚀 Quick Start
